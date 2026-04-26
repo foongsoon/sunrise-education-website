@@ -1,0 +1,10 @@
+# Clone repo
+git clone https://github.com/foongsoon/sunrise-education-website.git
+
+# Make changes
+npm run dev
+
+# Deploy (automatic on push to main)
+git add .
+git commit -m "Update content"
+git push origin main
