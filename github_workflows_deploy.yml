@@ -1,0 +1,45 @@
+name: 🚀 Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v3
+    
+    - name: 📦 Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: 📚 Install dependencies
+      run: npm ci
+    
+    - name: 🔨 Build production
+      run: npm run build
+      env:
+        CI: true
+    
+    - name: 📝 Generate SEO files
+      run: |
+        echo "User-agent: *" > dist/robots.txt
+        echo "Allow: /" >> dist/robots.txt
+        echo "Sitemap: https://sun.edu.my/sitemap.xml" >> dist/robots.txt
+        
+        echo "google.com, pub-5246650137102681, DIRECT, f08c47fec0942fa0" > dist/ads.txt
+    
+    - name: 🚀 Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        cname: sun.edu.my
