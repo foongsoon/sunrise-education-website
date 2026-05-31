@@ -3,385 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunrise Education - International Homeschool & Cambridge IGCSE</title>
-    <meta name="description" content="Sunrise Education offers Cambridge IGCSE international curriculum for ages 7-18 in Malaysia. Professional homeschooling education with care for child development and happiness.">
-    <meta name="keywords" content="homeschool, IGCSE, Cambridge, international curriculum, Malaysia, Klang">
-    <meta name="author" content="Sunrise Education">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Sunrise Education - International Homeschool">
-    <meta property="og:description" content="Professional Cambridge IGCSE homeschooling for ages 7-18 in Malaysia">
-    <meta property="og:url" content="https://sunriseeducation.my">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23FF6B6B'/><path d='M30 60 Q50 40 70 60' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'/><circle cx='35' cy='50' r='3' fill='white'/><circle cx='65' cy='50' r='3' fill='white'/></svg>">
-    
+    <title>Sunrise Education - 阳光学府 | Homeschooling Malaysia</title>
+    <meta name="description" content="Sunrise Education offers Cambridge IGCSE and Homeschooling programs for students aged 7-18 in Malaysia.">
+    <meta name="keywords" content="homeschooling, Cambridge IGCSE, international school, Malaysia, education">
+    <meta name="theme-color" content="#fbbf24">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Language Preference Indicator -->
-    <div id="language-indicator" class="language-indicator"></div>
-
-    <!-- Navigation Header -->
-    <header class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="logo">
-                    <span class="logo-icon">🌅</span>
-                    <div class="logo-text">
-                        <h1>Sunrise Education</h1>
-                        <p class="tagline">International Homeschool</p>
-                    </div>
+    <!-- Navigation & Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo-section">
+                    <span class="logo-icon">☀️</span>
+                    <span class="logo-text">Sunrise Education</span>
                 </div>
                 
-                <nav class="nav-menu">
-                    <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
-                    <a href="#about" class="nav-link" data-i18n="nav_about">About Us</a>
-                    <a href="#curriculum" class="nav-link" data-i18n="nav_curriculum">Curriculum</a>
-                    <a href="#why-us" class="nav-link" data-i18n="nav_why">Why Us</a>
-                    <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
-                </nav>
-
-                <div class="header-actions">
-                    <button id="language-toggle" class="language-toggle" aria-label="Toggle language">
-                        <span class="flag">🌐</span>
-                        <span class="lang-text" data-i18n="lang_select">EN</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <button class="menu-toggle" id="menu-toggle">
-                        <i class="fas fa-bars"></i>
+                <div class="nav-controls">
+                    <!-- Language Selector -->
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
+                        <button class="lang-btn" data-lang="ms">BM</button>
+                    </div>
+                    
+                    <!-- Theme Switcher -->
+                    <div class="theme-switcher">
+                        <button class="theme-btn" id="theme-btn" title="Toggle theme">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
             </div>
-        </div>
-
-        <!-- Language Dropdown Menu -->
-        <div id="language-menu" class="language-menu hidden">
-            <button class="lang-option" data-lang="en" data-label="English">
-                <span class="flag">🇬🇧</span> English
-            </button>
-            <button class="lang-option" data-lang="zh" data-label="中文">
-                <span class="flag">🇨🇳</span> 中文 (中文)
-            </button>
-            <button class="lang-option" data-lang="ms" data-label="Bahasa Melayu">
-                <span class="flag">🇲🇾</span> Bahasa Melayu
-            </button>
-        </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="#home" class="mobile-menu-item" data-text="home">Home</a>
+                <a href="#about" class="mobile-menu-item" data-text="about">About Us</a>
+                <a href="#programs" class="mobile-menu-item" data-text="programs">Programs</a>
+                <a href="#cambridge" class="mobile-menu-item" data-text="cambridge">Cambridge IGCSE</a>
+                <a href="#contact" class="mobile-menu-item" data-text="contact">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu hidden">
-        <a href="#home" class="mobile-nav-link" data-i18n="nav_home">Home</a>
-        <a href="#about" class="mobile-nav-link" data-i18n="nav_about">About Us</a>
-        <a href="#curriculum" class="mobile-nav-link" data-i18n="nav_curriculum">Curriculum</a>
-        <a href="#why-us" class="mobile-nav-link" data-i18n="nav_why">Why Us</a>
-        <a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact</a>
-    </div>
-
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h2 class="hero-title" data-i18n="hero_title">Where Learning Meets Joy</h2>
-            <p class="hero-subtitle" data-i18n="hero_subtitle">Professional Cambridge IGCSE homeschooling for ages 7-18</p>
-            <p class="hero-description" data-i18n="hero_description">We truly care about your child's growth and happiness</p>
+            <h1 class="hero-title" data-text="hero_title">Sunrise Education</h1>
+            <p class="hero-subtitle" data-text="hero_subtitle">Where Learning Meets Happiness</p>
+            <p class="hero-description" data-text="hero_description">Empowering young minds through Cambridge IGCSE & Malaysian Homeschooling</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary" data-i18n="btn_contact_now">Contact Us Now</a>
-                <a href="#curriculum" class="btn btn-secondary" data-i18n="btn_learn_more">Learn More</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">7-18</span>
-                    <span class="stat-label" data-i18n="stat_age">Age Range</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">Cambridge</span>
-                    <span class="stat-label" data-i18n="stat_curriculum">Curriculum</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">Malaysia</span>
-                    <span class="stat-label" data-i18n="stat_location">Based</span>
-                </div>
+                <button class="btn btn-primary" data-text="learn_more" onclick="document.querySelector('#programs').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                <button class="btn btn-secondary" data-text="contact_us" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
             </div>
         </div>
-        <div class="hero-decoration">
-            <div class="sun-icon">🌅</div>
+        <div class="hero-background">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title" data-i18n="about_title">About Sunrise Education</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p data-i18n="about_intro">Sunrise Education is a professional international homeschooling provider dedicated to nurturing young minds while prioritizing their overall well-being and happiness. We believe that education should inspire, challenge, and bring joy to learners.</p>
-                    
-                    <h3 data-i18n="about_mission_title">Our Mission</h3>
-                    <p data-i18n="about_mission">To provide world-class Cambridge IGCSE education that develops confident, compassionate, and capable learners who are prepared for global success.</p>
-                    
-                    <h3 data-i18n="about_vision_title">Our Vision</h3>
-                    <p data-i18n="about_vision">Creating an inclusive learning community where every child's potential is recognized, respected, and developed through personalized, joy-filled education.</p>
-
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-heart"></i>
-                            <span data-i18n="highlight_care">Child-Centered Care</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-globe"></i>
-                            <span data-i18n="highlight_global">Global Standards</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-smile"></i>
-                            <span data-i18n="highlight_happiness">Happiness First</span>
-                        </div>
-                    </div>
+            <h2 class="section-title" data-text="about_title">About Sunrise Education</h2>
+            <p class="section-subtitle" data-text="about_subtitle">Caring for Child Growth & Happiness</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">❤️</div>
+                    <h3 class="about-card-title" data-text="about_care">Child-Centric Care</h3>
+                    <p class="about-card-text" data-text="about_care_desc">We truly care about each child's emotional, social, and academic growth.</p>
                 </div>
-                
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-graduation-cap"></i>
-                        <p data-i18n="about_image_alt">Sunrise Education</p>
-                    </div>
+                <div class="about-card">
+                    <div class="about-icon">🌍</div>
+                    <h3 class="about-card-title" data-text="about_international">International Standards</h3>
+                    <p class="about-card-text" data-text="about_international_desc">Cambridge IGCSE curriculum recognized globally.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">📚</div>
+                    <h3 class="about-card-title" data-text="about_flexible">Flexible Learning</h3>
+                    <p class="about-card-text" data-text="about_flexible_desc">Homeschooling solutions tailored to your child's needs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Curriculum Section -->
-    <section id="curriculum" class="curriculum">
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
         <div class="container">
-            <h2 class="section-title" data-i18n="curriculum_title">Cambridge IGCSE Curriculum</h2>
-            <p class="section-subtitle" data-i18n="curriculum_subtitle">International excellence in education</p>
-
-            <div class="curriculum-overview">
-                <div class="curriculum-card">
-                    <div class="card-icon">📚</div>
-                    <h3 data-i18n="curriculum_what_title">What is IGCSE?</h3>
-                    <p data-i18n="curriculum_what_desc">IGCSE (International General Certificate of Secondary Education) is a globally recognized qualification offered by Cambridge International. It's trusted by universities and employers worldwide.</p>
+            <h2 class="section-title" data-text="programs_title">Our Programs</h2>
+            <p class="section-subtitle" data-text="programs_subtitle">Ages 7-18 Years</p>
+            
+            <div class="programs-grid">
+                <!-- Primary Program -->
+                <div class="program-card">
+                    <div class="program-header primary-header">
+                        <h3 class="program-title" data-text="primary_title">Primary Program</h3>
+                        <p class="program-age" data-text="primary_age">Ages 7-11</p>
+                    </div>
+                    <div class="program-content">
+                        <h4 class="program-subtitle" data-text="primary_curriculum">Comprehensive Curriculum</h4>
+                        <ul class="program-list">
+                            <li>📖 English & Languages</li>
+                            <li>🔢 Mathematics</li>
+                            <li>🔬 Science</li>
+                            <li>🎨 Arts & Creativity</li>
+                            <li>⚽ Physical Education</li>
+                            <li>🌱 Character Development</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-text="learn_more">Learn More</button>
                 </div>
 
-                <div class="curriculum-card">
-                    <div class="card-icon">🎯</div>
-                    <h3 data-i18n="curriculum_benefits_title">Key Benefits</h3>
-                    <ul class="benefits-list">
-                        <li data-i18n="curriculum_benefit_1">Internationally recognized qualification</li>
-                        <li data-i18n="curriculum_benefit_2">Flexible subject combinations</li>
-                        <li data-i18n="curriculum_benefit_3">Rigorous academic standards</li>
-                        <li data-i18n="curriculum_benefit_4">Holistic development approach</li>
+                <!-- Secondary Program -->
+                <div class="program-card">
+                    <div class="program-header secondary-header">
+                        <h3 class="program-title" data-text="secondary_title">Secondary Program</h3>
+                        <p class="program-age" data-text="secondary_age">Ages 12-18</p>
+                    </div>
+                    <div class="program-content">
+                        <h4 class="program-subtitle" data-text="secondary_curriculum">Pathway to Cambridge IGCSE</h4>
+                        <ul class="program-list">
+                            <li>📚 Literature & Language</li>
+                            <li>🔬 Advanced Sciences</li>
+                            <li>📐 Additional Mathematics</li>
+                            <li>💻 Technology & ICT</li>
+                            <li>🌐 Global Perspectives</li>
+                            <li>🎯 IGCSE Preparation</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-text="learn_more">Learn More</button>
+                </div>
+
+                <!-- Homeschool Program -->
+                <div class="program-card">
+                    <div class="program-header homeschool-header">
+                        <h3 class="program-title" data-text="homeschool_title">Sunrise Homeschool</h3>
+                        <p class="program-age" data-text="homeschool_flexible">Flexible Learning</p>
+                    </div>
+                    <div class="program-content">
+                        <h4 class="program-subtitle" data-text="homeschool_features">Personalized Learning Path</h4>
+                        <ul class="program-list">
+                            <li>🎓 One-on-One Mentoring</li>
+                            <li>⏰ Flexible Schedule</li>
+                            <li>📋 Custom Curriculum</li>
+                            <li>👨‍👩‍👧 Parent Coaching</li>
+                            <li>🏆 Progress Tracking</li>
+                            <li>🤝 Community Support</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-text="learn_more">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cambridge IGCSE Section -->
+    <section class="cambridge" id="cambridge">
+        <div class="container">
+            <h2 class="section-title" data-text="cambridge_title">Cambridge IGCSE Excellence</h2>
+            <p class="section-subtitle" data-text="cambridge_subtitle">International General Certificate of Secondary Education</p>
+            
+            <div class="cambridge-intro">
+                <p class="cambridge-description" data-text="cambridge_intro">Cambridge IGCSE is the world's most popular international qualification for 14-16 year olds, recognized by universities and employers globally.</p>
+            </div>
+
+            <div class="cambridge-grid">
+                <div class="cambridge-box">
+                    <h3 class="cambridge-box-title" data-text="cambridge_why_title">Why Cambridge IGCSE?</h3>
+                    <ul class="cambridge-list">
+                        <li>✓ <span data-text="cambridge_recognized">Globally recognized qualification</span></li>
+                        <li>✓ <span data-text="cambridge_universities">Accepted by top universities worldwide</span></li>
+                        <li>✓ <span data-text="cambridge_flexible_subjects">150+ subject combinations</span></li>
+                        <li>✓ <span data-text="cambridge_rigorous">Rigorous & comprehensive assessment</span></li>
+                        <li>✓ <span data-text="cambridge_skills">Develops critical thinking & independence</span></li>
                     </ul>
                 </div>
 
-                <div class="curriculum-card">
-                    <div class="card-icon">🌍</div>
-                    <h3 data-i18n="curriculum_global_title">Global Recognition</h3>
-                    <p data-i18n="curriculum_global_desc">Accepted by universities in UK, USA, Canada, Australia, Singapore, and beyond. Opens doors to international higher education and career opportunities.</p>
-                </div>
-            </div>
-
-            <div class="curriculum-details">
-                <h3 data-i18n="curriculum_subjects_title">Subject Offerings</h3>
-                
-                <div class="subject-groups">
-                    <div class="subject-group">
-                        <h4 data-i18n="curriculum_languages">Languages</h4>
-                        <ul>
-                            <li>English as First Language</li>
-                            <li>Chinese (Mandarin)</li>
-                            <li>Malay</li>
-                            <li>Spanish</li>
-                        </ul>
-                    </div>
-
-                    <div class="subject-group">
-                        <h4 data-i18n="curriculum_sciences">Sciences</h4>
-                        <ul>
-                            <li>Biology</li>
-                            <li>Chemistry</li>
-                            <li>Physics</li>
-                            <li>Combined Science</li>
-                        </ul>
-                    </div>
-
-                    <div class="subject-group">
-                        <h4 data-i18n="curriculum_mathematics">Mathematics</h4>
-                        <ul>
-                            <li>Mathematics (Core)</li>
-                            <li>Extended Mathematics</li>
-                            <li>Additional Mathematics</li>
-                        </ul>
-                    </div>
-
-                    <div class="subject-group">
-                        <h4 data-i18n="curriculum_humanities">Humanities & Arts</h4>
-                        <ul>
-                            <li>History</li>
-                            <li>Geography</li>
-                            <li>Economics</li>
-                            <li>Art & Design</li>
-                            <li>Music</li>
-                        </ul>
+                <div class="cambridge-box">
+                    <h3 class="cambridge-box-title" data-text="cambridge_subjects_title">Core Subjects Offered</h3>
+                    <div class="subjects-grid">
+                        <div class="subject-badge">English</div>
+                        <div class="subject-badge">Mathematics</div>
+                        <div class="subject-badge">Sciences</div>
+                        <div class="subject-badge">Languages</div>
+                        <div class="subject-badge">History</div>
+                        <div class="subject-badge">Geography</div>
+                        <div class="subject-badge">ICT</div>
+                        <div class="subject-badge">Business</div>
                     </div>
                 </div>
 
-                <div class="age-structure">
-                    <h3 data-i18n="curriculum_age_structure_title">Age Structure</h3>
-                    <div class="age-levels">
-                        <div class="age-level">
-                            <h4 data-i18n="curriculum_primary">Primary</h4>
-                            <p data-i18n="curriculum_primary_age">Ages 7-11</p>
-                            <p data-i18n="curriculum_primary_desc">Foundation in core subjects with emphasis on critical thinking and love of learning</p>
-                        </div>
-                        <div class="age-level">
-                            <h4 data-i18n="curriculum_secondary_lower">Lower Secondary</h4>
-                            <p data-i18n="curriculum_secondary_lower_age">Ages 12-14</p>
-                            <p data-i18n="curriculum_secondary_lower_desc">Preparation for IGCSE with wider subject exploration</p>
-                        </div>
-                        <div class="age-level">
-                            <h4 data-i18n="curriculum_secondary_upper">Upper Secondary</h4>
-                            <p data-i18n="curriculum_secondary_upper_age">Ages 15-18</p>
-                            <p data-i18n="curriculum_secondary_upper_desc">IGCSE and A-Level examination preparation</p>
+                <div class="cambridge-box full-width">
+                    <h3 class="cambridge-box-title" data-text="cambridge_assessment_title">Assessment Structure</h3>
+                    <div class="assessment-table">
+                        <div class="assessment-row">
+                            <div class="assessment-col">
+                                <strong data-text="cambridge_written_exams">Written Exams</strong>
+                                <p data-text="cambridge_written_exams_desc">60-80% of final grade</p>
+                            </div>
+                            <div class="assessment-col">
+                                <strong data-text="cambridge_coursework">Coursework</strong>
+                                <p data-text="cambridge_coursework_desc">20-40% of final grade</p>
+                            </div>
+                            <div class="assessment-col">
+                                <strong data-text="cambridge_practical">Practical</strong>
+                                <p data-text="cambridge_practical_desc">Integrated in sciences</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us">
-        <div class="container">
-            <h2 class="section-title" data-i18n="why_us_title">Why Choose Sunrise Education?</h2>
-            
-            <div class="why-us-grid">
-                <div class="why-card">
-                    <div class="why-icon">❤️</div>
-                    <h3 data-i18n="why_care_title">Genuine Care & Support</h3>
-                    <p data-i18n="why_care_desc">We truly care about each child's emotional well-being, academic progress, and personal growth. Your child is not just a student - they're a valued member of our community.</p>
+                <div class="cambridge-box">
+                    <h3 class="cambridge-box-title" data-text="cambridge_our_support_title">Our IGCSE Support</h3>
+                    <ul class="cambridge-list">
+                        <li>✓ <span data-text="cambridge_experienced_teachers">Experienced Cambridge-certified teachers</span></li>
+                        <li>✓ <span data-text="cambridge_past_papers">Regular past papers & mock exams</span></li>
+                        <li>✓ <span data-text="cambridge_personalized_guidance">Personalized exam guidance</span></li>
+                        <li>✓ <span data-text="cambridge_support_sessions">Intensive revision sessions</span></li>
+                        <li>✓ <span data-text="cambridge_progress_monitoring">Continuous progress monitoring</span></li>
+                    </ul>
                 </div>
 
-                <div class="why-card">
-                    <div class="why-icon">🎓</div>
-                    <h3 data-i18n="why_expert_title">Expert Educators</h3>
-                    <p data-i18n="why_expert_desc">Our team comprises qualified teachers experienced in Cambridge IGCSE curriculum with passion for international education and student development.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">👨‍👩‍👧</div>
-                    <h3 data-i18n="why_flexible_title">Flexible Homeschooling</h3>
-                    <p data-i18n="why_flexible_desc">Personalized learning schedules that work for your family. One-on-one and small group options to ensure individual attention and progress.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">🌏</div>
-                    <h3 data-i18n="why_international_title">International Curriculum</h3>
-                    <p data-i18n="why_international_desc">Cambridge IGCSE prepares students for universities worldwide. Recognized by top institutions globally, opening doors to international opportunities.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">🎯</div>
-                    <h3 data-i18n="why_holistic_title">Holistic Development</h3>
-                    <p data-i18n="why_holistic_desc">Beyond academics: we develop critical thinking, creativity, leadership skills, and character values that matter for life success.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">🏆</div>
-                    <h3 data-i18n="why_success_title">Proven Results</h3>
-                    <p data-i18n="why_success_desc">Our students consistently achieve excellent results and go on to prestigious universities. Success measured not just in grades but in confidence and happiness.</p>
+                <div class="cambridge-box">
+                    <h3 class="cambridge-box-title" data-text="cambridge_after_igcse_title">Post-IGCSE Pathways</h3>
+                    <ul class="cambridge-list">
+                        <li>📚 <span data-text="cambridge_cambridge_alevel">Cambridge A-Levels</span></li>
+                        <li>🎓 <span data-text="cambridge_international_unis">International Universities</span></li>
+                        <li>🌟 <span data-text="cambridge_scholarship">Scholarship Opportunities</span></li>
+                        <li>💼 <span data-text="cambridge_career_pathways">Professional Certifications</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
-            <p class="section-subtitle" data-i18n="contact_subtitle">We'd love to hear from you. Start your child's learning journey today!</p>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-method">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="method-content">
-                            <h4 data-i18n="contact_location">Location</h4>
-                            <p>No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
-                            <a href="https://maps.google.com/maps?ll=2.996279,101.445392&z=16&t=m&hl=en&gl=MY&mapclient=embed&cid=17369959600029876247" target="_blank" rel="noopener noreferrer" class="map-link" data-i18n="contact_directions">Get Directions →</a>
+            <h2 class="section-title" data-text="contact_title">Get In Touch</h2>
+            <p class="section-subtitle" data-text="contact_subtitle">We'd love to hear from you!</p>
+            
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-box">
+                    <h3 class="contact-box-title" data-text="contact_send_message">Send us a Message</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="" data-placeholder="contact_name" required>
+                            <label for="name" class="form-label" data-text="contact_name">Your Name</label>
                         </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <i class="fas fa-phone"></i>
-                        <div class="method-content">
-                            <h4 data-i18n="contact_phone">Call / WhatsApp</h4>
-                            <a href="tel:+60124251556">+60 12-425 1556</a>
-                            <p class="small-text" data-i18n="contact_phone_hours">Available Monday - Friday, 9AM - 6PM</p>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="" data-placeholder="contact_email" required>
+                            <label for="email" class="form-label" data-text="contact_email">Email Address</label>
                         </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <i class="fas fa-envelope"></i>
-                        <div class="method-content">
-                            <h4 data-i18n="contact_email">Email</h4>
-                            <a href="mailto:LOVE@sun.edu.my">LOVE@sun.edu.my</a>
-                            <p class="small-text" data-i18n="contact_email_response">We'll respond within 24 hours</p>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="" data-placeholder="contact_phone">
+                            <label for="phone" class="form-label" data-text="contact_phone">Phone Number</label>
                         </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <i class="fas fa-robot"></i>
-                        <div class="method-content">
-                            <h4 data-i18n="contact_ai">Ask AI Assistant</h4>
-                            <a href="https://ai.sun.edu.my" target="_blank" rel="noopener noreferrer">ai.sun.edu.my</a>
-                            <p class="small-text" data-i18n="contact_ai_desc">24/7 automated assistance</p>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="" data-placeholder="contact_message" required></textarea>
+                            <label for="message" class="form-label" data-text="contact_message">Your Message</label>
                         </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/sunrisecenters/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/SunriseResourceCentre" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </div>
+                        <button type="submit" class="btn btn-primary" data-text="contact_send">Send Message</button>
+                    </form>
                 </div>
 
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required data-i18n-placeholder="form_name">
+                <!-- Contact Info -->
+                <div class="contact-info-box">
+                    <h3 class="contact-box-title" data-text="contact_information">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-detail">
+                            <p class="contact-label" data-text="contact_call_whatsapp">Call / WhatsApp</p>
+                            <a href="tel:+60124251556" class="contact-link">+60 12-425 1556</a>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required data-i18n-placeholder="form_email">
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-detail">
+                            <p class="contact-label" data-text="contact_email_label">Email</p>
+                            <a href="mailto:LOVE@sun.edu.my" class="contact-link">LOVE@sun.edu.my</a>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" data-i18n-placeholder="form_phone">
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🤖</div>
+                        <div class="contact-detail">
+                            <p class="contact-label" data-text="contact_ai_assistant">AI Assistant</p>
+                            <a href="https://ai.sun.edu.my" target="_blank" class="contact-link">ai.sun.edu.my</a>
                         </div>
-                        <div class="form-group">
-                            <input type="text" id="child-name" name="childName" placeholder="Child's Name (Optional)" data-i18n-placeholder="form_child_name">
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-detail">
+                            <p class="contact-label" data-text="contact_address">Address</p>
+                            <p class="contact-text">No. 25-2nd Floor, Jalan Mahogani 5/Ks7<br>41200 Klang, Selangor, Malaysia</p>
+                            <a href="https://maps.google.com/maps?ll=2.996279,101.445392&z=16&t=m&hl=en&gl=MY&mapclient=embed&cid=17369959600029876247" target="_blank" class="contact-link" data-text="contact_directions">Get Directions</a>
                         </div>
-                        <div class="form-group">
-                            <select id="age-range" name="ageRange" data-i18n-placeholder="form_age_range">
-                                <option value="">Select Age Range</option>
-                                <option value="7-11">Ages 7-11 (Primary)</option>
-                                <option value="12-14">Ages 12-14 (Lower Secondary)</option>
-                                <option value="15-18">Ages 15-18 (Upper Secondary)</option>
-                            </select>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-detail">
+                            <p class="contact-label" data-text="contact_follow_us">Follow Us</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/sunrisecenters/" target="_blank" class="social-link" title="Instagram">📷 Instagram</a>
+                                <a href="https://www.facebook.com/SunriseResourceCentre" target="_blank" class="social-link" title="Facebook">👥 Facebook</a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tell us about your inquiry..." rows="5" data-i18n-placeholder="form_message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit">Send Message</button>
-                        <p class="form-note" data-i18n="form_note">We'll respond within 24 hours</p>
-                    </form>
+                    </div>
                 </div>
             </div>
 
+            <!-- Map -->
             <div class="map-container">
-                <iframe src="https://maps.google.com/maps?q=2.996279,101.445392&hl=en&z=16&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sunrise Education Location"></iframe>
+                <h3 class="contact-box-title" data-text="contact_location">Our Location</h3>
+                <div class="map-embed">
+                    <iframe src="https://maps.google.com/maps?q=2.996279,101.445392&hl=en&z=16&output=embed" width="100%" height="400" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -391,51 +344,39 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Sunrise Education</h4>
-                    <p data-i18n="footer_tagline">International Homeschool with Cambridge IGCSE Curriculum</p>
-                    <p class="location" data-i18n="footer_location">Klang, Selangor, Malaysia</p>
+                    <h4 class="footer-title" data-text="footer_about">About</h4>
+                    <p data-text="footer_about_desc">Sunrise Education is committed to nurturing young minds through world-class education and genuine care.</p>
                 </div>
-
                 <div class="footer-section">
-                    <h4 data-i18n="footer_quick_links">Quick Links</h4>
-                    <ul>
-                        <li><a href="#home" data-i18n="nav_home">Home</a></li>
-                        <li><a href="#about" data-i18n="nav_about">About Us</a></li>
-                        <li><a href="#curriculum" data-i18n="nav_curriculum">Curriculum</a></li>
-                        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    <h4 class="footer-title" data-text="footer_programs">Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#programs" data-text="footer_primary">Primary Program</a></li>
+                        <li><a href="#programs" data-text="footer_secondary">Secondary Program</a></li>
+                        <li><a href="#programs" data-text="footer_homeschool">Homeschool</a></li>
+                        <li><a href="#cambridge" data-text="footer_cambridge">Cambridge IGCSE</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
-                    <h4 data-i18n="footer_contact">Contact Info</h4>
-                    <ul>
-                        <li><a href="tel:+60124251556">+60 12-425 1556</a></li>
-                        <li><a href="mailto:LOVE@sun.edu.my">LOVE@sun.edu.my</a></li>
-                        <li><a href="https://ai.sun.edu.my" target="_blank" rel="noopener noreferrer">ai.sun.edu.my</a></li>
+                    <h4 class="footer-title" data-text="footer_quick_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-text="footer_home">Home</a></li>
+                        <li><a href="#about" data-text="footer_about_link">About Us</a></li>
+                        <li><a href="#contact" data-text="footer_contact">Contact</a></li>
+                        <li><a href="#contact" data-text="footer_admissions">Admissions</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
-                    <h4 data-i18n="footer_follow">Follow Us</h4>
-                    <div class="footer-socials">
-                        <a href="https://www.instagram.com/sunrisecenters/" target="_blank" rel="noopener noreferrer" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/SunriseResourceCentre" target="_blank" rel="noopener noreferrer" title="Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </div>
+                    <h4 class="footer-title" data-text="footer_contact_us">Contact Us</h4>
+                    <p><a href="tel:+60124251556">+60 12-425 1556</a></p>
+                    <p><a href="mailto:LOVE@sun.edu.my">LOVE@sun.edu.my</a></p>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">&copy; 2024 Sunrise Education. All rights reserved.</p>
-                <p data-i18n="footer_care">We truly care about your child's growth and happiness</p>
+                <p data-text="footer_copyright">&copy; 2024 Sunrise Education. All rights reserved. | Nurturing Minds, Brightening Futures ☀️</p>
             </div>
         </div>
     </footer>
 
-    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
