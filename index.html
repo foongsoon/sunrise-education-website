@@ -3,15 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sunrise Education Homeschool - Cambridge IGCSE International Education for ages 7-18 in Malaysia">
-    <meta name="keywords" content="homeschooling, international education, Cambridge IGCSE, Malaysia, Klang">
-    <title>Sunrise Education Homeschool</title>
+    <title>Sunrise Education - International Homeschool & Cambridge IGCSE</title>
+    <meta name="description" content="Sunrise Education offers Cambridge IGCSE international curriculum for ages 7-18 in Malaysia. Professional homeschooling education with care for child development and happiness.">
+    <meta name="keywords" content="homeschool, IGCSE, Cambridge, international curriculum, Malaysia, Klang">
+    <meta name="author" content="Sunrise Education">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sunrise Education - International Homeschool">
+    <meta property="og:description" content="Professional Cambridge IGCSE homeschooling for ages 7-18 in Malaysia">
+    <meta property="og:url" content="https://sunriseeducation.my">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23FF6B6B'/><path d='M30 60 Q50 40 70 60' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'/><circle cx='35' cy='50' r='3' fill='white'/><circle cx='65' cy='50' r='3' fill='white'/></svg>">
+    
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23FF6B35'>☀</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div id="app"></div>
-    <script src="i18n.js"></script>
-    <script src="app.js"></script>
+    <!-- Language Preference Indicator -->
+    <div id="language-indicator" class="language-indicator"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <span class="logo-icon">🌅</span>
+                    <div class="logo-text">
+                        <h1>Sunrise Education</h1>
+                        <p class="tagline">International Homeschool</p>
+                    </div>
+                </div>
+                
+                <nav class="nav-menu">
+                    <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
+                    <a href="#about" class="nav-link" data-i18n="nav_about">About Us</a>
+                    <a href="#curriculum" class="nav-link" data-i18n="nav_curriculum">Curriculum</a>
+                    <a href="#why-us" class="nav-link" data-i18n="nav_why">Why Us</a>
+                    <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button id="language-toggle" class="language-toggle" aria-label="Toggle language">
+                        <span class="flag">🌐</span>
+                        <span class="lang-text" data-i18n="lang_select">EN</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="menu-toggle" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Language Dropdown Menu -->
+        <div id="language-menu" class="language-menu hidden">
+            <button class="lang-option" data-lang="en" data-label="English">
+                <span class="flag">🇬🇧</span> English
+            </button>
+            <button class="lang-option" data-lang="zh" data-label="中文">
+                <span class="flag">🇨🇳</span> 中文 (中文)
+            </button>
+            <button class="lang-option" data-lang="ms" data-label="Bahasa Melayu">
+                <span class="flag">🇲🇾</span> Bahasa Melayu
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="#home" class="mobile-nav-link" data-i18n="nav_home">Home</a>
+        <a href="#about" class="mobile-nav-link" data-i18n="nav_about">About Us</a>
+        <a href="#curriculum" class="mobile-nav-link" data-i18n="nav_curriculum">Curriculum</a>
+        <a href="#why-us" class="mobile-nav-link" data-i18n="nav_why">Why Us</a>
+        <a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title" data-i18n="hero_title">Where Learning Meets Joy</h2>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Professional Cambridge IGCSE homeschooling for ages 7-18</p>
+            <p class="hero-description" data-i18n="hero_description">We truly care about your child's growth and happiness</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary" data-i18n="btn_contact_now">Contact Us Now</a>
+                <a href="#curriculum" class="btn btn-secondary" data-i18n="btn_learn_more">Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">7-18</span>
+                    <span class="stat-label" data-i18n="stat_age">Age Range</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Cambridge</span>
+                    <span class="stat-label" data-i18n="stat_curriculum">Curriculum</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Malaysia</span>
+                    <span class="stat-label" data-i18n="stat_location">Based</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="sun-icon">🌅</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about_title">About Sunrise Education</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about_intro">Sunrise Education is a professional international homeschooling provider dedicated to nurturing young minds while prioritizing their overall well-being and happiness. We believe that education should inspire, challenge, and bring joy to learners.</p>
+                    
+                    <h3 data-i18n="about_mission_title">Our Mission</h3>
+                    <p data-i18n="about_mission">To provide world-class Cambridge IGCSE education that develops confident, compassionate, and capable learners who are prepared for global success.</p>
+                    
+                    <h3 data-i18n="about_vision_title">Our Vision</h3>
+                    <p data-i18n="about_vision">Creating an inclusive learning community where every child's potential is recognized, respected, and developed through personalized, joy-filled education.</p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-heart"></i>
+                            <span data-i18n="highlight_care">Child-Centered Care</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-globe"></i>
+                            <span data-i18n="highlight_global">Global Standards</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-smile"></i>
+                            <span data-i18n="highlight_happiness">Happiness First</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p data-i18n="about_image_alt">Sunrise Education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="curriculum">
+        <div class="container">
+            <h2 class="section-title" data-i18n="curriculum_title">Cambridge IGCSE Curriculum</h2>
+            <p class="section-subtitle" data-i18n="curriculum_subtitle">International excellence in education</p>
+
+            <div class="curriculum-overview">
+                <div class="curriculum-card">
+                    <div class="card-icon">📚</div>
+                    <h3 data-i18n="curriculum_what_title">What is IGCSE?</h3>
+                    <p data-i18n="curriculum_what_desc">IGCSE (International General Certificate of Secondary Education) is a globally recognized qualification offered by Cambridge International. It's trusted by universities and employers worldwide.</p>
+                </div>
+
+                <div class="curriculum-card">
+                    <div class="card-icon">🎯</div>
+                    <h3 data-i18n="curriculum_benefits_title">Key Benefits</h3>
+                    <ul class="benefits-list">
+                        <li data-i18n="curriculum_benefit_1">Internationally recognized qualification</li>
+                        <li data-i18n="curriculum_benefit_2">Flexible subject combinations</li>
+                        <li data-i18n="curriculum_benefit_3">Rigorous academic standards</li>
+                        <li data-i18n="curriculum_benefit_4">Holistic development approach</li>
+                    </ul>
+                </div>
+
+                <div class="curriculum-card">
+                    <div class="card-icon">🌍</div>
+                    <h3 data-i18n="curriculum_global_title">Global Recognition</h3>
+                    <p data-i18n="curriculum_global_desc">Accepted by universities in UK, USA, Canada, Australia, Singapore, and beyond. Opens doors to international higher education and career opportunities.</p>
+                </div>
+            </div>
+
+            <div class="curriculum-details">
+                <h3 data-i18n="curriculum_subjects_title">Subject Offerings</h3>
+                
+                <div class="subject-groups">
+                    <div class="subject-group">
+                        <h4 data-i18n="curriculum_languages">Languages</h4>
+                        <ul>
+                            <li>English as First Language</li>
+                            <li>Chinese (Mandarin)</li>
+                            <li>Malay</li>
+                            <li>Spanish</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-group">
+                        <h4 data-i18n="curriculum_sciences">Sciences</h4>
+                        <ul>
+                            <li>Biology</li>
+                            <li>Chemistry</li>
+                            <li>Physics</li>
+                            <li>Combined Science</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-group">
+                        <h4 data-i18n="curriculum_mathematics">Mathematics</h4>
+                        <ul>
+                            <li>Mathematics (Core)</li>
+                            <li>Extended Mathematics</li>
+                            <li>Additional Mathematics</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-group">
+                        <h4 data-i18n="curriculum_humanities">Humanities & Arts</h4>
+                        <ul>
+                            <li>History</li>
+                            <li>Geography</li>
+                            <li>Economics</li>
+                            <li>Art & Design</li>
+                            <li>Music</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="age-structure">
+                    <h3 data-i18n="curriculum_age_structure_title">Age Structure</h3>
+                    <div class="age-levels">
+                        <div class="age-level">
+                            <h4 data-i18n="curriculum_primary">Primary</h4>
+                            <p data-i18n="curriculum_primary_age">Ages 7-11</p>
+                            <p data-i18n="curriculum_primary_desc">Foundation in core subjects with emphasis on critical thinking and love of learning</p>
+                        </div>
+                        <div class="age-level">
+                            <h4 data-i18n="curriculum_secondary_lower">Lower Secondary</h4>
+                            <p data-i18n="curriculum_secondary_lower_age">Ages 12-14</p>
+                            <p data-i18n="curriculum_secondary_lower_desc">Preparation for IGCSE with wider subject exploration</p>
+                        </div>
+                        <div class="age-level">
+                            <h4 data-i18n="curriculum_secondary_upper">Upper Secondary</h4>
+                            <p data-i18n="curriculum_secondary_upper_age">Ages 15-18</p>
+                            <p data-i18n="curriculum_secondary_upper_desc">IGCSE and A-Level examination preparation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <h2 class="section-title" data-i18n="why_us_title">Why Choose Sunrise Education?</h2>
+            
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="why-icon">❤️</div>
+                    <h3 data-i18n="why_care_title">Genuine Care & Support</h3>
+                    <p data-i18n="why_care_desc">We truly care about each child's emotional well-being, academic progress, and personal growth. Your child is not just a student - they're a valued member of our community.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🎓</div>
+                    <h3 data-i18n="why_expert_title">Expert Educators</h3>
+                    <p data-i18n="why_expert_desc">Our team comprises qualified teachers experienced in Cambridge IGCSE curriculum with passion for international education and student development.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">👨‍👩‍👧</div>
+                    <h3 data-i18n="why_flexible_title">Flexible Homeschooling</h3>
+                    <p data-i18n="why_flexible_desc">Personalized learning schedules that work for your family. One-on-one and small group options to ensure individual attention and progress.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🌏</div>
+                    <h3 data-i18n="why_international_title">International Curriculum</h3>
+                    <p data-i18n="why_international_desc">Cambridge IGCSE prepares students for universities worldwide. Recognized by top institutions globally, opening doors to international opportunities.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🎯</div>
+                    <h3 data-i18n="why_holistic_title">Holistic Development</h3>
+                    <p data-i18n="why_holistic_desc">Beyond academics: we develop critical thinking, creativity, leadership skills, and character values that matter for life success.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🏆</div>
+                    <h3 data-i18n="why_success_title">Proven Results</h3>
+                    <p data-i18n="why_success_desc">Our students consistently achieve excellent results and go on to prestigious universities. Success measured not just in grades but in confidence and happiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+            <p class="section-subtitle" data-i18n="contact_subtitle">We'd love to hear from you. Start your child's learning journey today!</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="method-content">
+                            <h4 data-i18n="contact_location">Location</h4>
+                            <p>No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
+                            <a href="https://maps.google.com/maps?ll=2.996279,101.445392&z=16&t=m&hl=en&gl=MY&mapclient=embed&cid=17369959600029876247" target="_blank" rel="noopener noreferrer" class="map-link" data-i18n="contact_directions">Get Directions →</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div class="method-content">
+                            <h4 data-i18n="contact_phone">Call / WhatsApp</h4>
+                            <a href="tel:+60124251556">+60 12-425 1556</a>
+                            <p class="small-text" data-i18n="contact_phone_hours">Available Monday - Friday, 9AM - 6PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="method-content">
+                            <h4 data-i18n="contact_email">Email</h4>
+                            <a href="mailto:LOVE@sun.edu.my">LOVE@sun.edu.my</a>
+                            <p class="small-text" data-i18n="contact_email_response">We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fas fa-robot"></i>
+                        <div class="method-content">
+                            <h4 data-i18n="contact_ai">Ask AI Assistant</h4>
+                            <a href="https://ai.sun.edu.my" target="_blank" rel="noopener noreferrer">ai.sun.edu.my</a>
+                            <p class="small-text" data-i18n="contact_ai_desc">24/7 automated assistance</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/sunrisecenters/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/SunriseResourceCentre" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required data-i18n-placeholder="form_name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required data-i18n-placeholder="form_email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" data-i18n-placeholder="form_phone">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="child-name" name="childName" placeholder="Child's Name (Optional)" data-i18n-placeholder="form_child_name">
+                        </div>
+                        <div class="form-group">
+                            <select id="age-range" name="ageRange" data-i18n-placeholder="form_age_range">
+                                <option value="">Select Age Range</option>
+                                <option value="7-11">Ages 7-11 (Primary)</option>
+                                <option value="12-14">Ages 12-14 (Lower Secondary)</option>
+                                <option value="15-18">Ages 15-18 (Upper Secondary)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell us about your inquiry..." rows="5" data-i18n-placeholder="form_message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit">Send Message</button>
+                        <p class="form-note" data-i18n="form_note">We'll respond within 24 hours</p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=2.996279,101.445392&hl=en&z=16&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sunrise Education Location"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sunrise Education</h4>
+                    <p data-i18n="footer_tagline">International Homeschool with Cambridge IGCSE Curriculum</p>
+                    <p class="location" data-i18n="footer_location">Klang, Selangor, Malaysia</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer_quick_links">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#about" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="#curriculum" data-i18n="nav_curriculum">Curriculum</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer_contact">Contact Info</h4>
+                    <ul>
+                        <li><a href="tel:+60124251556">+60 12-425 1556</a></li>
+                        <li><a href="mailto:LOVE@sun.edu.my">LOVE@sun.edu.my</a></li>
+                        <li><a href="https://ai.sun.edu.my" target="_blank" rel="noopener noreferrer">ai.sun.edu.my</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer_follow">Follow Us</h4>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/sunrisecenters/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/SunriseResourceCentre" target="_blank" rel="noopener noreferrer" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">&copy; 2024 Sunrise Education. All rights reserved.</p>
+                <p data-i18n="footer_care">We truly care about your child's growth and happiness</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
